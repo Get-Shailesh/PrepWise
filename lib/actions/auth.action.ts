@@ -1,8 +1,10 @@
 "use server";
 
 import { db, auth } from "@/firebase/admin";
-// import { User } from "@firebase/auth";
-import { cookies } from "next/headers";
+ // import { User } from "@firebase/auth";
+import { cookies } from "next/headers"
+// import Interview from "@/types/interview"; 
+
 const ONE_WEEK = 60 * 60 * 24 * 7;
 export async function signUp(params: SignUpParams) {
     const { uid, name, email } = params;
@@ -114,3 +116,5 @@ export async function isAuthenticated() {
     const user = await getCurrentUser();
     return !! user; 
 }
+
+ 
